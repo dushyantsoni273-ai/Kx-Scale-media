@@ -8,7 +8,6 @@ interface Props {
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: "h1" | "h2" | "h3" | "p" | "span" | "div";
 }
 
 const variants = {
@@ -20,11 +19,19 @@ const variants = {
   }),
 };
 
-export default function RevealText({ children, className, delay = 0, as = "div" }: Props) {
-  const Comp = motion[as as "div"];
+/**
+ * Text reveal-on-scroll wrapper. Uses <span> for both the outer mask and the
+ * animated inner element (rather than <div>) so this stays valid when nested
+ * inside heading tags like <h1>/<h2> — nesting a block-level <div> inside a
+ * <span> inside a heading is invalid HTML and can cause the browser to
+ * silently reparent the DOM during parsing, which breaks React hydration
+ * for that subtree (the animation never runs, with no visible console error).
+ */
+export default function RevealText({ children, className, delay = 0 }: Props) {
   return (
     <span className={clsx("block overflow-hidden", className)}>
-      <Comp
+      <motion.span
+        className="block"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
@@ -32,7 +39,7 @@ export default function RevealText({ children, className, delay = 0, as = "div" 
         variants={variants}
       >
         {children}
-      </Comp>
+      </motion.span>
     </span>
   );
 }
