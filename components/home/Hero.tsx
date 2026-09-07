@@ -44,7 +44,7 @@ export default function Hero() {
           <RevealText immediate delay={0.05}>We don&apos;t just run ads.</RevealText>
           <RevealText immediate delay={0.18}>
             We{" "}
-            <span className="relative inline-block h-[1em] align-bottom overflow-hidden min-w-[3.2ch] sm:min-w-[5ch]">
+            <span className="relative inline-block h-[1em] align-bottom overflow-hidden min-w-[7.5ch]">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={words[index]}
@@ -52,7 +52,7 @@ export default function Hero() {
                   animate={{ y: "0%", opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute left-0"
+                  className="absolute left-0 whitespace-nowrap"
                 >
                   {words[index]}
                 </motion.span>
