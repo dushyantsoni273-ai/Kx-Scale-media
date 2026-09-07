@@ -1,5 +1,6 @@
 import Hero from "@/components/home/Hero";
 import Trust from "@/components/home/Trust";
+import TeamStrip from "@/components/home/TeamStrip";
 import ScrollZoomShowcase from "@/components/home/ScrollZoomShowcase";
 import ServicesSection from "@/components/home/ServicesSection";
 import WorkSection from "@/components/home/WorkSection";
@@ -16,6 +17,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Trust />
+      <TeamStrip />
       <ScrollZoomShowcase />
       <ServicesSection />
       <WorkSection />
