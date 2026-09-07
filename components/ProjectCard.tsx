@@ -14,9 +14,18 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
       transition={{ duration: 0.7, delay: (index % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
     >
       <Link href={`/case-studies/${project.slug}`} data-cursor="hover" className="group block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-mist">
+        <motion.div
+          className="relative aspect-[4/5] overflow-hidden bg-mist"
+          whileHover="hover"
+          initial="rest"
+          animate="rest"
+        >
           {/* Placeholder media block — replace bg color / add <Image> or <video> using project.thumbnail */}
-          <div className="absolute inset-0 bg-gradient-to-br from-mist to-line transition-transform duration-700 ease-premium group-hover:scale-105" />
+          <motion.div
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.08 } }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 bg-gradient-to-br from-mist to-line"
+          />
           <div className="absolute inset-0 flex items-center justify-center text-ink/20 text-xs uppercase tracking-widest">
             Replace media: {project.thumbnail}
           </div>
@@ -27,15 +36,19 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
               </div>
             </div>
           )}
-          <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+          <motion.div
+            variants={{ rest: { opacity: 0, y: 8 }, hover: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.4 }}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white flex items-center justify-center"
+          >
             <ArrowUpRight size={16} />
-          </div>
+          </motion.div>
           {project.result && (
             <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1.5 text-xs font-bold uppercase tracking-wide">
               {project.result}
             </div>
           )}
-        </div>
+        </motion.div>
         <div className="mt-4 flex items-start justify-between gap-4">
           <div>
             <h3 className="font-bold text-lg group-hover:text-ink/70 transition-colors">{project.clientName}</h3>

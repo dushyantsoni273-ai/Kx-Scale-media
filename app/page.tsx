@@ -1,5 +1,6 @@
 import Hero from "@/components/home/Hero";
 import Trust from "@/components/home/Trust";
+import ScrollZoomShowcase from "@/components/home/ScrollZoomShowcase";
 import ServicesSection from "@/components/home/ServicesSection";
 import WorkSection from "@/components/home/WorkSection";
 import CaseStudiesSection from "@/components/home/CaseStudiesSection";
@@ -15,6 +16,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Trust />
+      <ScrollZoomShowcase />
       <ServicesSection />
       <WorkSection />
       <CaseStudiesSection />
