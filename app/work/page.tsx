@@ -15,8 +15,8 @@ export default function WorkPage() {
           Our Work
         </span>
         <h1 className="mt-4 font-display font-extrabold uppercase text-display-1 max-w-4xl">
-          <RevealText>Work That Drives</RevealText>
-          <RevealText delay={0.12}>Results.</RevealText>
+          <RevealText immediate>Work That Drives</RevealText>
+          <RevealText immediate delay={0.12}>Results.</RevealText>
         </h1>
       </section>
 

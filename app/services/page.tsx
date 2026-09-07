@@ -17,8 +17,8 @@ export default function ServicesPage() {
           Services
         </span>
         <h1 className="mt-4 font-display font-extrabold uppercase text-display-1 max-w-4xl">
-          <RevealText>Everything You Need</RevealText>
-          <RevealText delay={0.12}>To Scale.</RevealText>
+          <RevealText immediate>Everything You Need</RevealText>
+          <RevealText immediate delay={0.12}>To Scale.</RevealText>
         </h1>
       </section>
 

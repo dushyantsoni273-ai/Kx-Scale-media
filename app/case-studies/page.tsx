@@ -18,8 +18,8 @@ export default function CaseStudiesPage() {
           Case Studies
         </span>
         <h1 className="mt-4 font-display font-extrabold uppercase text-display-1 max-w-4xl">
-          <RevealText>Results, Not</RevealText>
-          <RevealText delay={0.12}>Just Reports.</RevealText>
+          <RevealText immediate>Results, Not</RevealText>
+          <RevealText immediate delay={0.12}>Just Reports.</RevealText>
         </h1>
       </section>
 

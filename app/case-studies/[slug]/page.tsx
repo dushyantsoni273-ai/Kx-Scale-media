@@ -39,7 +39,7 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
           Case Study — {cs.industry}
         </p>
         <h1 className="font-display font-extrabold uppercase text-display-1 max-w-4xl">
-          <RevealText>{cs.client}</RevealText>
+          <RevealText immediate>{cs.client}</RevealText>
         </h1>
         <FadeUp delay={0.2} className="mt-8 flex flex-wrap gap-3">
           {cs.services.map((s) => (

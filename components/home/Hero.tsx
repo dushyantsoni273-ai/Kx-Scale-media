@@ -41,8 +41,8 @@ export default function Hero() {
         </div>
 
         <h1 className="font-display font-extrabold uppercase text-display-1 text-balance max-w-5xl">
-          <RevealText delay={0.05}>We don&apos;t just run ads.</RevealText>
-          <RevealText delay={0.18}>
+          <RevealText immediate delay={0.05}>We don&apos;t just run ads.</RevealText>
+          <RevealText immediate delay={0.18}>
             We{" "}
             <span className="relative inline-block h-[1em] align-bottom overflow-hidden min-w-[3.2ch] sm:min-w-[5ch]">
               <AnimatePresence mode="wait">

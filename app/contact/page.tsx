@@ -17,8 +17,8 @@ export default function ContactPage() {
           Contact
         </span>
         <h1 className="mt-4 font-display font-extrabold uppercase text-display-1 max-w-4xl">
-          <RevealText>Let&apos;s Talk</RevealText>
-          <RevealText delay={0.12}>Growth.</RevealText>
+          <RevealText immediate>Let&apos;s Talk</RevealText>
+          <RevealText immediate delay={0.12}>Growth.</RevealText>
         </h1>
       </section>
 

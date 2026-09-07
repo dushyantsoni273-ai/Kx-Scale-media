@@ -32,8 +32,8 @@ export default function AboutPage() {
     <div className="pt-40 pb-28">
       <section className="container-px max-w-content mx-auto">
         <h1 className="font-display font-extrabold uppercase text-display-1 max-w-4xl">
-          <RevealText>We Build</RevealText>
-          <RevealText delay={0.12}>Growth Systems.</RevealText>
+          <RevealText immediate>We Build</RevealText>
+          <RevealText immediate delay={0.12}>Growth Systems.</RevealText>
         </h1>
       </section>
 
