@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "../MagneticButton";
 import RevealText from "../RevealText";
+import RotatingBadge from "./RotatingBadge";
 
 const words = ["SCALE", "GROW", "CONVERT", "PERFORM"];
 
@@ -30,6 +31,11 @@ export default function Hero() {
           transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
         />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_#F5F5F5,_transparent_60%)]" />
+      </div>
+
+      {/* Rotating trust badge — fills the whitespace on the right */}
+      <div className="hidden lg:block absolute top-1/2 right-[10%] -translate-y-1/2 pointer-events-none">
+        <RotatingBadge />
       </div>
 
       <div className="max-w-content mx-auto w-full">
