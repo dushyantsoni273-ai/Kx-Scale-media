@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import VideoScrollHero from "@/components/home/VideoScrollHero";
 import Trust from "@/components/home/Trust";
 import TeamStrip from "@/components/home/TeamStrip";
 import ScrollZoomShowcase from "@/components/home/ScrollZoomShowcase";
@@ -16,6 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <VideoScrollHero />
       <Trust />
       <TeamStrip />
       <ScrollZoomShowcase />
