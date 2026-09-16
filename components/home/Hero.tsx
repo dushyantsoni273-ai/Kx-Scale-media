@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "../MagneticButton";
 import RevealText from "../RevealText";
 import RotatingBadge from "./RotatingBadge";
+import AnimatedGlow from "./AnimatedGlow";
 
 const words = ["SCALE", "GROW", "CONVERT", "PERFORM"];
 
@@ -20,6 +21,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden container-px pt-32 pb-20">
       {/* Abstract motion graphic - minimal geometric lines, no stock images */}
       <div className="pointer-events-none absolute inset-0 -z-10">
+        <AnimatedGlow />
         <motion.div
           className="absolute top-[15%] right-[8%] w-[38vw] h-[38vw] max-w-[560px] max-h-[560px] rounded-full border border-line"
           animate={{ rotate: 360 }}
