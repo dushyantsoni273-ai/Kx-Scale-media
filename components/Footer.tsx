@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin, Facebook, Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
 
 const nav = [
@@ -75,6 +75,9 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <a href="#" data-cursor="hover" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
               <Instagram size={16} />
+            </a>
+            <a href="#" data-cursor="hover" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
+              <Facebook size={16} />
             </a>
             <a href="#" data-cursor="hover" aria-label="LinkedIn" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
               <Linkedin size={16} />
