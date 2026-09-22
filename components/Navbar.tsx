@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 import Logo from "./Logo";
+import { AnimatedBackground } from "./core/animated-background";
 
 const links = [
   { label: "Home", href: "/" },
@@ -37,20 +38,25 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-9 text-sm font-medium tracking-wide">
-          {links.map((l) => (
-            <li key={l.href}>
+        <div className="hidden lg:flex items-center text-sm font-medium tracking-wide">
+          <AnimatedBackground
+            className="rounded-full bg-mist"
+            transition={{ type: "spring", bounce: 0.2, duration: 0.3 }}
+            enableHover
+          >
+            {links.map((l) => (
               <Link
+                key={l.href}
                 href={l.href}
+                data-id={l.label}
                 data-cursor="hover"
-                className="relative group py-2"
+                className="px-4 py-2 rounded-full text-ink/70 hover:text-ink transition-colors duration-300"
               >
                 {l.label}
-                <span className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-ink transition-all duration-300 group-hover:w-full" />
               </Link>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </AnimatedBackground>
+        </div>
 
         <div className="hidden lg:block">
           <MagneticButton href="/contact" className="!py-3 !px-6 text-xs">
