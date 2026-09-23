@@ -51,9 +51,6 @@ export default function VideoScrollHero() {
         <div className="absolute inset-0 bg-black/35" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center container-px">
-          <span className="text-xs uppercase tracking-[0.25em] text-white/60 font-semibold mb-6">
-            Scroll To Explore
-          </span>
           <h2 className="font-display font-extrabold uppercase text-display-1 text-white max-w-4xl text-balance">
             <RevealText immediate>Every Scroll,</RevealText>
             <RevealText immediate delay={0.12}>A New Frame.</RevealText>
