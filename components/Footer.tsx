@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Facebook, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
 
 const nav = [
@@ -64,11 +64,11 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex flex-wrap gap-6 text-sm text-white/70">
-            <a href="mailto:hello@kxscalemedia.com" data-cursor="hover" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Mail size={16} /> hello@kxscalemedia.com
+            <a href="mailto:kxscalemedia@gmail.com" data-cursor="hover" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Mail size={16} /> kxscalemedia@gmail.com
             </a>
-            <a href="tel:+910000000000" data-cursor="hover" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Phone size={16} /> +91 00000 00000
+            <a href="tel:+918729048744" data-cursor="hover" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone size={16} /> +91 87290 48744
             </a>
           </div>
 
@@ -78,9 +78,6 @@ export default function Footer() {
             </a>
             <a href="#" data-cursor="hover" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
               <Facebook size={16} />
-            </a>
-            <a href="#" data-cursor="hover" aria-label="LinkedIn" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
-              <Linkedin size={16} />
             </a>
           </div>
         </div>
