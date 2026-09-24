@@ -4,16 +4,18 @@ import FadeUp from "../FadeUp";
 import { AnimatedGroup } from "../core/animated-group";
 
 /**
- * TO ADD YOUR OWN PHOTOS:
- * Replace the URLs below with your own image paths (e.g. "/showcase/photo-1.jpg"
- * after adding files to /public/showcase/). Add or remove entries freely —
- * the grid re-flows automatically (2 cols on mobile, 3 on tablet, 4 on desktop).
+ * TO ADD/CHANGE PHOTOS:
+ * Add your image file to /public/showcase/, then add its path to this list.
+ * Add or remove entries freely — the grid re-flows automatically
+ * (2 cols on mobile, 3 on tablet, 4 on desktop).
  */
 const images = [
-  "https://images.beta.cosmos.so/fc6fdd93-552c-47e6-98aa-b8fb3ba070a2?format=jpeg",
-  "https://images.beta.cosmos.so/cb674d14-ebd1-4408-bab1-79df895017b6?format=jpeg",
-  "https://images.beta.cosmos.so/e5a6c3ed-82ad-4084-9a11-1eccd7bc91aa?format=jpeg",
-  "https://images.beta.cosmos.so/4d02a1e7-d1f2-4575-86a9-bed243e59132?format=jpeg",
+  "/showcase/creative-01.jpeg",
+  "/showcase/creative-02.jpeg",
+  "/showcase/creative-03.jpeg",
+  "/showcase/creative-04.jpeg",
+  "/showcase/creative-05.jpeg",
+  "/showcase/creative-06.jpeg",
 ];
 
 export default function CreativeGallery() {
