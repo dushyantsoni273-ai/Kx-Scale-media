@@ -58,7 +58,7 @@ export default function CreativeGallery() {
                 key={src}
                 src={src}
                 alt="KX Scale Media creative work"
-                className="w-full h-auto aspect-[4/5] object-cover rounded-[4px]"
+                className="w-full h-auto aspect-[4/5] object-cover rounded-xl"
               />
             ))}
           </AnimatedGroup>
