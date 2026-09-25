@@ -33,7 +33,7 @@ export default function CreativeGallery() {
 
         <div className="mt-16">
           <AnimatedGroup
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 gap-4"
             variants={{
               container: {
                 hidden: { opacity: 0 },
