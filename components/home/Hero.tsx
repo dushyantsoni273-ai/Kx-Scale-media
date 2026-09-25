@@ -6,6 +6,7 @@ import MagneticButton from "../MagneticButton";
 import RevealText from "../RevealText";
 import RotatingBadge from "./RotatingBadge";
 import AnimatedGlow from "./AnimatedGlow";
+import { TextEffect } from "../core/text-effect";
 
 const words = ["SCALE", "GROW", "CONVERT", "PERFORM"];
 
@@ -43,9 +44,16 @@ export default function Hero() {
       <div className="max-w-content mx-auto w-full">
         <div className="flex items-center gap-3 mb-8">
           <span className="w-2 h-2 rounded-full bg-ink animate-pulse" />
-          <span className="text-xs uppercase tracking-[0.25em] text-ink/60 font-semibold">
+          <TextEffect
+            as="span"
+            preset="fade-in-blur"
+            speedReveal={1.1}
+            speedSegment={0.3}
+            immediate
+            className="text-xs uppercase tracking-[0.25em] text-ink/60 font-semibold"
+          >
             Performance Marketing Agency
-          </span>
+          </TextEffect>
         </div>
 
         <h1 className="font-display font-extrabold uppercase text-display-1 text-balance max-w-5xl">
