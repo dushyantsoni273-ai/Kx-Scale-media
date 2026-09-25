@@ -73,10 +73,24 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="#" data-cursor="hover" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
+            <a
+              href="https://www.instagram.com/kxscalemedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="hover"
+              aria-label="Instagram"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors"
+            >
               <Instagram size={16} />
             </a>
-            <a href="#" data-cursor="hover" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors">
+            <a
+              href="https://www.facebook.com/kxscalemedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="hover"
+              aria-label="Facebook"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white hover:text-ink transition-colors"
+            >
               <Facebook size={16} />
             </a>
           </div>

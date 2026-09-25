@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook } from "lucide-react";
 import RevealText from "@/components/RevealText";
 import FadeUp from "@/components/FadeUp";
 import ContactForm from "./ContactForm";
@@ -30,17 +30,29 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-12 space-y-5">
-            <a href="mailto:hello@kxscalemedia.com" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">
-              <Mail size={18} /> hello@kxscalemedia.com
+            <a href="mailto:kxscalemedia@gmail.com" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">
+              <Mail size={18} /> kxscalemedia@gmail.com
             </a>
-            <a href="tel:+910000000000" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">
-              <Phone size={18} /> +91 00000 00000
+            <a href="tel:+918729048744" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">
+              <Phone size={18} /> +91 87290 48744
             </a>
-            <a href="#" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">
+            <a
+              href="https://www.instagram.com/kxscalemedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="hover"
+              className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors"
+            >
               <Instagram size={18} /> @kxscalemedia
             </a>
-            <a href="#" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">
-              <Linkedin size={18} /> KX Scale Media
+            <a
+              href="https://www.facebook.com/kxscalemedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="hover"
+              className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors"
+            >
+              <Facebook size={18} /> KX Scale Media
             </a>
           </div>
         </FadeUp>
