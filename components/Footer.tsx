@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
-import { TextScramble } from "./core/text-scramble";
+import { TextEffect } from "./core/text-effect";
 
 const nav = [
   { label: "Home", href: "/" },
@@ -67,11 +67,15 @@ export default function Footer() {
           <div className="flex flex-wrap gap-6 text-sm text-white/70">
             <a href="mailto:kxscalemedia@gmail.com" data-cursor="hover" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail size={16} />
-              <TextScramble as="span">kxscalemedia@gmail.com</TextScramble>
+              <TextEffect as="span" per="char" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3}>
+                kxscalemedia@gmail.com
+              </TextEffect>
             </a>
             <a href="tel:+918729048744" data-cursor="hover" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone size={16} />
-              <TextScramble as="span">+91 87290 48744</TextScramble>
+              <TextEffect as="span" per="char" preset="fade-in-blur" speedReveal={1.1} speedSegment={0.3}>
+                +91 87290 48744
+              </TextEffect>
             </a>
           </div>
 
