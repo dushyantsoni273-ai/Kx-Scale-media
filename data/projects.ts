@@ -100,9 +100,6 @@ export const projects: Project[] = [
 ];
 
 export const categoryLabels: { label: string; value: "all" | ProjectCategory }[] = [
-  { label: "All", value: "all" },
-  { label: "Video", value: "video" },
   { label: "Creatives", value: "creatives" },
   { label: "Performance", value: "performance" },
-  { label: "Case Studies", value: "case-studies" },
 ];

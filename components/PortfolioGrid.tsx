@@ -6,7 +6,7 @@ import { projects, categoryLabels, ProjectCategory } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 
 export default function PortfolioGrid({ limit }: { limit?: number }) {
-  const [filter, setFilter] = useState<"all" | ProjectCategory>("all");
+  const [filter, setFilter] = useState<"all" | ProjectCategory>("creatives");
 
   const filtered = useMemo(() => {
     const list =
