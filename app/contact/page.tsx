@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Mail, Phone, Instagram, Facebook } from "lucide-react";
 import RevealText from "@/components/RevealText";
 import FadeUp from "@/components/FadeUp";
+import MagneticButton from "@/components/MagneticButton";
+import { WHATSAPP_LINK } from "@/lib/whatsapp";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -28,6 +30,17 @@ export default function ContactPage() {
             Tell us about your business and goals. We&apos;ll get back to you
             within 24 hours to schedule your free strategy call.
           </p>
+
+          <div className="mt-8">
+            <MagneticButton
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="!bg-[#25D366] hover:!bg-[#1DA851]"
+            >
+              Chat on WhatsApp
+            </MagneticButton>
+          </div>
 
           <div className="mt-12 space-y-5">
             <a href="mailto:kxscalemedia@gmail.com" data-cursor="hover" className="flex items-center gap-3 text-sm font-medium hover:text-ink/60 transition-colors">

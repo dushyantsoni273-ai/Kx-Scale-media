@@ -12,6 +12,8 @@ interface Props {
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  target?: string;
+  rel?: string;
 }
 
 export default function MagneticButton({
@@ -21,6 +23,8 @@ export default function MagneticButton({
   className,
   onClick,
   type = "button",
+  target,
+  rel,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -59,7 +63,7 @@ export default function MagneticButton({
 
   if (href) {
     return (
-      <Link href={href} onClick={onClick}>
+      <Link href={href} onClick={onClick} target={target} rel={rel}>
         {content}
       </Link>
     );
