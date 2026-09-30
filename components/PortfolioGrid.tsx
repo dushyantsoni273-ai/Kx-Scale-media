@@ -3,7 +3,18 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { projects, categoryLabels, ProjectCategory } from "@/data/projects";
+import { InfiniteSlider } from "./core/infinite-slider";
 import ProjectCard from "./ProjectCard";
+
+// Same images used in the home page Creative Gallery — used for every image here.
+const creativeImages = [
+  "/showcase/creative-01.jpeg",
+  "/showcase/creative-02.jpeg",
+  "/showcase/creative-03.jpeg",
+  "/showcase/creative-04.jpeg",
+  "/showcase/creative-05.jpeg",
+  "/showcase/creative-06.jpeg",
+];
 
 export default function PortfolioGrid({ limit }: { limit?: number }) {
   const [filter, setFilter] = useState<"all" | ProjectCategory>("creatives");
@@ -38,11 +49,24 @@ export default function PortfolioGrid({ limit }: { limit?: number }) {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
-        {filtered.map((p, i) => (
-          <ProjectCard key={p.id} project={p} index={i} />
-        ))}
-      </div>
+      {filter === "creatives" ? (
+        <InfiniteSlider speedOnHover={20} speed={50} gap={24}>
+          {creativeImages.map((src) => (
+            <img
+              key={src}
+              src={src}
+              alt="KX Scale Media creative work"
+              className="aspect-[4/5] w-[220px] sm:w-[260px] object-cover rounded-xl"
+            />
+          ))}
+        </InfiniteSlider>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
+          {filtered.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -60,25 +60,6 @@ export const projects: Project[] = [
     result: "₹1.4Cr Pipeline",
   },
   {
-    id: "proj-05",
-    slug: "nourish-organic",
-    clientName: "Nourish Organic Foods",
-    industry: "E-Commerce · FMCG",
-    services: ["Graphic Creatives", "Social Media"],
-    category: ["creatives", "social"],
-    thumbnail: "/showcase/creative-01.jpeg",
-  },
-  {
-    id: "proj-06",
-    slug: "stride-footwear",
-    clientName: "Stride Footwear",
-    industry: "E-Commerce · Fashion",
-    services: ["Video Content", "Creative Strategy"],
-    category: ["video", "creatives"],
-    thumbnail: "/showcase/creative-02.jpeg",
-    isVideo: true,
-  },
-  {
     id: "proj-07",
     slug: "brightpath-edu",
     clientName: "BrightPath Education",
@@ -87,15 +68,6 @@ export const projects: Project[] = [
     category: ["performance", "case-studies"],
     thumbnail: "/work/placeholder-07.jpg",
     result: "38% Lower CPL",
-  },
-  {
-    id: "proj-08",
-    slug: "loop-coffee-co",
-    clientName: "Loop Coffee Co.",
-    industry: "Food & Beverage",
-    services: ["Social Media", "Graphic Creatives"],
-    category: ["social", "creatives"],
-    thumbnail: "/showcase/creative-03.jpeg",
   },
 ];
 
