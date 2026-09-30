@@ -66,7 +66,7 @@ export const projects: Project[] = [
     industry: "E-Commerce · FMCG",
     services: ["Graphic Creatives", "Social Media"],
     category: ["creatives", "social"],
-    thumbnail: "/work/placeholder-05.jpg",
+    thumbnail: "/showcase/creative-01.jpeg",
   },
   {
     id: "proj-06",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     industry: "E-Commerce · Fashion",
     services: ["Video Content", "Creative Strategy"],
     category: ["video", "creatives"],
-    thumbnail: "/work/placeholder-06.jpg",
+    thumbnail: "/showcase/creative-02.jpeg",
     isVideo: true,
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     industry: "Food & Beverage",
     services: ["Social Media", "Graphic Creatives"],
     category: ["social", "creatives"],
-    thumbnail: "/work/placeholder-08.jpg",
+    thumbnail: "/showcase/creative-03.jpeg",
   },
 ];
 
