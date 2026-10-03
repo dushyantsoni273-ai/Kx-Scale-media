@@ -12,9 +12,9 @@ export default function Trust() {
 
         <div className="lg:col-span-8 order-1 lg:order-2">
           <h2 className="font-display font-extrabold uppercase text-display-2 text-balance">
-            <RevealText>Creative Thinking.</RevealText>
-            <RevealText delay={0.1}>Data-Driven Execution.</RevealText>
-            <RevealText delay={0.2}>Real Results.</RevealText>
+            <RevealText immediate>Creative Thinking.</RevealText>
+            <RevealText immediate delay={0.1}>Data-Driven Execution.</RevealText>
+            <RevealText immediate delay={0.2}>Real Results.</RevealText>
           </h2>
           <FadeUp delay={0.3} className="mt-8 max-w-md">
             <p className="text-ink/60 leading-relaxed">

@@ -2,69 +2,86 @@
 
 import { motion } from "framer-motion";
 
-// Three nodes represent the three phrases in the heading next to this visual
-// (Creative Thinking -> Data-Driven Execution -> Real Results).
 const nodes = [
-  { cx: 64, cy: 46, r: 28 },
-  { cx: 146, cy: 148, r: 36 },
-  { cx: 224, cy: 244, r: 28 },
+  { cx: 60, cy: 50, r: 26, label: "CREATIVE" },
+  { cx: 150, cy: 150, r: 36, label: "DATA" },
+  { cx: 220, cy: 250, r: 26, label: "RESULTS" },
 ];
 
 export default function TrustVisual() {
   return (
-    <div className="relative w-full max-w-[300px] aspect-square mx-auto lg:mx-0">
-      <svg viewBox="0 0 280 280" className="w-full h-full overflow-visible">
+    <div className="relative w-full max-w-[320px] aspect-[14/15] mx-auto lg:mx-0">
+      {/* Soft ambient glow behind the diagram, for a more premium feel */}
+      <div className="absolute inset-0 m-auto w-[80%] h-[80%] rounded-full bg-ink/[0.04] blur-3xl" />
+
+      <svg viewBox="0 0 280 300" className="relative w-full h-full">
         {/* Slow ambient dashed ring */}
         <motion.circle
-          cx="140"
-          cy="140"
-          r="132"
+          cx={140}
+          cy={150}
+          r={132}
           fill="none"
-          stroke="#EAEAEA"
+          className="stroke-line"
           strokeWidth={1}
-          strokeDasharray="2 7"
+          strokeDasharray="2 8"
           animate={{ rotate: 360 }}
-          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "140px 140px" }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "140px 150px" }}
         />
 
-        {/* Connecting path that draws itself in once the section scrolls into view */}
+        {/* Connecting path — draws itself in once scrolled into view */}
         <motion.path
-          d="M 64 46 C 150 46, 60 148, 146 148 C 232 148, 138 244, 224 244"
+          d="M 60 50 C 146 50, 56 150, 150 150 C 244 150, 134 250, 220 250"
           fill="none"
-          stroke="#EAEAEA"
-          strokeWidth={2}
+          className="stroke-line"
+          strokeWidth={1.5}
           initial={{ pathLength: 0, opacity: 0 }}
           whileInView={{ pathLength: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
         />
 
         {nodes.map((n, i) => (
-          <motion.circle
-            key={i}
-            cx={n.cx}
-            cy={n.cy}
-            r={n.r}
-            fill="none"
-            stroke="#111111"
-            strokeWidth={1.5}
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformOrigin: `${n.cx}px ${n.cy}px` }}
-          />
+          <g key={n.label}>
+            {/* Gentle breathing pulse ring, so each node feels alive */}
+            <motion.circle
+              cx={n.cx}
+              cy={n.cy}
+              r={n.r}
+              fill="none"
+              className="stroke-ink"
+              strokeWidth={1}
+              initial={{ opacity: 0 }}
+              animate={{ scale: [1, 1.3, 1], opacity: [0.35, 0, 0.35] }}
+              transition={{ duration: 3, repeat: Infinity, delay: i * 0.6, ease: "easeInOut" }}
+              style={{ transformOrigin: `${n.cx}px ${n.cy}px` }}
+            />
+            <motion.circle
+              cx={n.cx}
+              cy={n.cy}
+              r={n.r}
+              fill="#FFFFFF"
+              className="stroke-ink"
+              strokeWidth={1.5}
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.3 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformOrigin: `${n.cx}px ${n.cy}px` }}
+            />
+            <text
+              x={n.cx}
+              y={n.cy + n.r + 18}
+              textAnchor="middle"
+              fontSize={9}
+              letterSpacing={1.5}
+              fontWeight={700}
+              className="fill-ink/40"
+            >
+              {n.label}
+            </text>
+          </g>
         ))}
-
-        {/* A small dot continuously drifting between the three nodes, so the
-            visual keeps a bit of life after the initial reveal finishes */}
-        <motion.circle
-          r={4}
-          fill="#111111"
-          animate={{ cx: [64, 146, 224, 64], cy: [46, 148, 244, 46] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
       </svg>
     </div>
   );
