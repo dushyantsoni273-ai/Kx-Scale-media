@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import RevealText from "@/components/RevealText";
-import PortfolioGrid from "@/components/PortfolioGrid";
+import WorkGallery from "@/components/WorkGallery";
 
 export const metadata: Metadata = {
   title: "Our Work | KX Scale Media",
@@ -21,7 +21,7 @@ export default function WorkPage() {
       </section>
 
       <section className="container-px max-w-content mx-auto">
-        <PortfolioGrid />
+        <WorkGallery />
       </section>
     </div>
   );
