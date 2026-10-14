@@ -1,9 +1,9 @@
 "use client";
 
-import { AnimatedGroup } from "./core/animated-group";
+import { InfiniteSlider } from "./core/infinite-slider";
 
 /**
- * All creatives shown on the Our Work page.
+ * All creatives shown on the Our Work page (same moving slider as the homepage).
  * To add one: put the image in /public/showcase/ and add its path here.
  */
 const creatives = [
@@ -18,35 +18,34 @@ const creatives = [
   "/showcase/creative-09.jpeg",
 ];
 
+// Second row starts from a different image so both rows don't look identical
+const secondRow = [...creatives.slice(4), ...creatives.slice(0, 4)];
+
+function Card({ src }: { src: string }) {
+  return (
+    <img
+      src={src}
+      alt="KX Scale Media creative work"
+      className="aspect-[4/5] w-[220px] sm:w-[260px] object-cover rounded-xl"
+    />
+  );
+}
+
 export default function WorkGallery() {
   return (
-    <AnimatedGroup
-      className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-      variants={{
-        container: {
-          hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
-        },
-        item: {
-          hidden: { opacity: 0, y: 40, filter: "blur(6px)" },
-          visible: {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            transition: { duration: 1, type: "spring", bounce: 0.3 },
-          },
-        },
-      }}
-    >
-      {creatives.map((src) => (
-        <div key={src} className="group overflow-hidden rounded-xl bg-mist aspect-[4/5]">
-          <img
-            src={src}
-            alt="KX Scale Media creative work"
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-          />
-        </div>
-      ))}
-    </AnimatedGroup>
+    <div className="space-y-6">
+      <InfiniteSlider speed={50} speedOnHover={20} gap={24}>
+        {creatives.map((src) => (
+          <Card key={src} src={src} />
+        ))}
+      </InfiniteSlider>
+
+      {/* Second row moves in the opposite direction. Remove this block for a single row. */}
+      <InfiniteSlider speed={50} speedOnHover={20} gap={24} reverse>
+        {secondRow.map((src) => (
+          <Card key={src} src={src} />
+        ))}
+      </InfiniteSlider>
+    </div>
   );
 }

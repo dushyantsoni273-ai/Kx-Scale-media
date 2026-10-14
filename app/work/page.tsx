@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="pt-40 pb-28">
+    <div className="pt-40 pb-28 overflow-hidden">
       <section className="container-px max-w-content mx-auto mb-16">
         <span className="text-xs uppercase tracking-[0.25em] text-ink/50 font-semibold">
           Our Work
@@ -20,9 +20,7 @@ export default function WorkPage() {
         </h1>
       </section>
 
-      <section className="container-px max-w-content mx-auto">
-        <WorkGallery />
-      </section>
+      <WorkGallery />
     </div>
   );
 }
