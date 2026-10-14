@@ -15,6 +15,9 @@ const images = [
   "/showcase/creative-04.jpeg",
   "/showcase/creative-05.jpeg",
   "/showcase/creative-06.jpeg",
+  "/showcase/creative-07.jpeg",
+  "/showcase/creative-08.jpeg",
+  "/showcase/creative-09.jpeg",
 ];
 
 export default function CreativeGallery() {

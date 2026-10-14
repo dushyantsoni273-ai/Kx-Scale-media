@@ -7,7 +7,7 @@ export interface Project {
   industry: string;
   services: string[];
   category: ProjectCategory[];
-  // Replace with real thumbnail path e.g. "/work/client-01.jpg" or a video URL
+  // Image shown on the card. Files live in /public/showcase/
   thumbnail: string;
   isVideo?: boolean;
   result?: string;
@@ -15,7 +15,8 @@ export interface Project {
 
 /**
  * TO ADD A NEW PROJECT:
- * Copy an object below, change the fields, and add your media file to /public/work/.
+ * Copy an object below, change the fields, and add your image to /public/showcase/.
+ * NOTE: client names below are still placeholders — replace with real clients.
  */
 export const projects: Project[] = [
   {
@@ -24,8 +25,8 @@ export const projects: Project[] = [
     clientName: "Urban Thread Co.",
     industry: "E-Commerce · Fashion",
     services: ["Meta Ads", "Creative Strategy"],
-    category: ["performance", "case-studies"],
-    thumbnail: "/work/placeholder-01.jpg",
+    category: ["performance", "creatives"],
+    thumbnail: "/showcase/creative-01.jpeg",
     result: "4.2x ROAS",
   },
   {
@@ -34,8 +35,8 @@ export const projects: Project[] = [
     clientName: "GlowLab Skincare",
     industry: "Beauty & D2C",
     services: ["Video Content", "Meta Ads"],
-    category: ["video", "performance"],
-    thumbnail: "/work/placeholder-02.jpg",
+    category: ["video", "performance", "creatives"],
+    thumbnail: "/showcase/creative-02.jpeg",
     isVideo: true,
     result: "3.1x ROAS",
   },
@@ -45,8 +46,8 @@ export const projects: Project[] = [
     clientName: "Peak Fitness Studio",
     industry: "Health & Fitness",
     services: ["Lead Generation", "Google Ads"],
-    category: ["performance", "case-studies"],
-    thumbnail: "/work/placeholder-03.jpg",
+    category: ["performance", "creatives"],
+    thumbnail: "/showcase/creative-03.jpeg",
     result: "612 Leads",
   },
   {
@@ -55,9 +56,28 @@ export const projects: Project[] = [
     clientName: "Vantage Realty Group",
     industry: "Real Estate",
     services: ["Lead Generation", "Funnel Strategy"],
-    category: ["performance"],
-    thumbnail: "/work/placeholder-04.jpg",
+    category: ["performance", "creatives"],
+    thumbnail: "/showcase/creative-04.jpeg",
     result: "₹1.4Cr Pipeline",
+  },
+  {
+    id: "proj-05",
+    slug: "nourish-organic",
+    clientName: "Nourish Organic Foods",
+    industry: "E-Commerce · FMCG",
+    services: ["Graphic Creatives", "Social Media"],
+    category: ["creatives", "social"],
+    thumbnail: "/showcase/creative-05.jpeg",
+  },
+  {
+    id: "proj-06",
+    slug: "stride-footwear",
+    clientName: "Stride Footwear",
+    industry: "E-Commerce · Fashion",
+    services: ["Video Content", "Creative Strategy"],
+    category: ["video", "creatives"],
+    thumbnail: "/showcase/creative-06.jpeg",
+    isVideo: true,
   },
   {
     id: "proj-07",
@@ -65,13 +85,34 @@ export const projects: Project[] = [
     clientName: "BrightPath Education",
     industry: "EdTech",
     services: ["Performance Marketing", "Lead Generation"],
-    category: ["performance", "case-studies"],
-    thumbnail: "/work/placeholder-07.jpg",
+    category: ["performance", "creatives"],
+    thumbnail: "/showcase/creative-07.jpeg",
     result: "38% Lower CPL",
+  },
+  {
+    id: "proj-08",
+    slug: "loop-coffee-co",
+    clientName: "Loop Coffee Co.",
+    industry: "Food & Beverage",
+    services: ["Social Media", "Graphic Creatives"],
+    category: ["social", "creatives"],
+    thumbnail: "/showcase/creative-08.jpeg",
+  },
+  {
+    id: "proj-09",
+    slug: "aura-interiors",
+    clientName: "Aura Interiors",
+    industry: "Home & Living",
+    services: ["Meta Ads", "Graphic Creatives"],
+    category: ["performance", "creatives"],
+    thumbnail: "/showcase/creative-09.jpeg",
+    result: "3.8x ROAS",
   },
 ];
 
 export const categoryLabels: { label: string; value: "all" | ProjectCategory }[] = [
+  { label: "All", value: "all" },
+  { label: "Video", value: "video" },
   { label: "Creatives", value: "creatives" },
   { label: "Performance", value: "performance" },
 ];
