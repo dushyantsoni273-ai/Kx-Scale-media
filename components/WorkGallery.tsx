@@ -18,34 +18,17 @@ const creatives = [
   "/showcase/creative-09.jpeg",
 ];
 
-// Second row starts from a different image so both rows don't look identical
-const secondRow = [...creatives.slice(4), ...creatives.slice(0, 4)];
-
-function Card({ src }: { src: string }) {
-  return (
-    <img
-      src={src}
-      alt="KX Scale Media creative work"
-      className="aspect-[4/5] w-[220px] sm:w-[260px] object-cover rounded-xl"
-    />
-  );
-}
-
 export default function WorkGallery() {
   return (
-    <div className="space-y-6">
-      <InfiniteSlider speed={50} speedOnHover={20} gap={24}>
-        {creatives.map((src) => (
-          <Card key={src} src={src} />
-        ))}
-      </InfiniteSlider>
-
-      {/* Second row moves in the opposite direction. Remove this block for a single row. */}
-      <InfiniteSlider speed={50} speedOnHover={20} gap={24} reverse>
-        {secondRow.map((src) => (
-          <Card key={src} src={src} />
-        ))}
-      </InfiniteSlider>
-    </div>
+    <InfiniteSlider speed={50} speedOnHover={20} gap={24}>
+      {creatives.map((src) => (
+        <img
+          key={src}
+          src={src}
+          alt="KX Scale Media creative work"
+          className="aspect-[4/5] w-[220px] sm:w-[260px] object-cover rounded-xl"
+        />
+      ))}
+    </InfiniteSlider>
   );
 }
