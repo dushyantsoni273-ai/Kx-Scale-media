@@ -2,6 +2,7 @@
 
 import { ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import FadeUp from "../FadeUp";
 import MagneticButton from "../MagneticButton";
 import { InfiniteSlider } from "../core/infinite-slider";
@@ -27,7 +28,7 @@ function Line({ children, delay = 0 }: { children: ReactNode; delay?: number }) 
   );
 }
 
-const marqueeWords = ["Let's Scale", "Performance", "Creative", "Growth", "Results"];
+const marqueeWords = ["Let's Scale", "Performance", "Creative", "Growth", "Results", "Revenue"];
 const points = ["Performance First", "Creative + Data", "Transparent Strategy"];
 
 export default function FinalCTA() {
@@ -98,17 +99,22 @@ export default function FinalCTA() {
             </FadeUp>
           </div>
 
-          {/* Scrolling outline text along the bottom edge */}
-          <div className="relative border-t border-line py-6 select-none">
-            <InfiniteSlider speed={40} speedOnHover={15} gap={48}>
-              {marqueeWords.map((w) => (
-                <span
-                  key={w}
-                  className="whitespace-nowrap font-display font-extrabold uppercase leading-none text-[clamp(2.5rem,7vw,5.5rem)]"
-                  style={{ WebkitTextStroke: "1px rgba(17,17,17,0.3)", color: "transparent" }}
-                >
-                  {w} <span className="mx-6 text-ink/30">✦</span>
-                </span>
+          {/* Scrolling words along the bottom edge: solid dark / soft grey alternating */}
+          <div className="relative border-t border-line py-7 select-none [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+            <InfiniteSlider speed={40} speedOnHover={15} gap={40}>
+              {marqueeWords.map((w, i) => (
+                <div key={w} className="flex items-center gap-10">
+                  <span
+                    className={`whitespace-nowrap font-display font-extrabold uppercase leading-none tracking-tight text-[clamp(2.5rem,6vw,5rem)] ${
+                      i % 2 === 0 ? "text-ink" : "text-ink/15"
+                    }`}
+                  >
+                    {w}
+                  </span>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink/50">
+                    <ArrowUpRight size={18} />
+                  </span>
+                </div>
               ))}
             </InfiniteSlider>
           </div>
